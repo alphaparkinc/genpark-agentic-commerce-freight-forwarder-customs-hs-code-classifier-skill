@@ -1,0 +1,65 @@
+{
+  "name": "genpark-agentic-commerce-freight-forwarder-customs-hs-code-classifier-skill",
+  "version": "1.0.0",
+  "title": "Freight Customs HS Code AI Classifier & Duty Minimizer Skill",
+  "description": "Harmonized System (HS) 6-digit tariff code classification, preferential Free Trade Agreement (FTA) origin rules auditing, and customs tariff minimizer. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "hs-code",
+    "customs-tariff",
+    "cross-border-duty",
+    "freight-forwarding",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "classify_product_hs_code",
+      "description": "Classify product description into 6-digit WCO Harmonized Tariff Schedule code and calculate duty rate.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "product_description": {
+            "type": "string"
+          },
+          "material_composition": {
+            "type": "string"
+          },
+          "country_of_origin": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_description",
+          "country_of_origin"
+        ]
+      }
+    },
+    {
+      "name": "audit_tariff_engineering_savings",
+      "description": "Assess tariff engineering re-classification opportunities (e.g. unassembled vs assembled).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "original_duty_rate_pct": {
+            "type": "number"
+          },
+          "candidate_duty_rate_pct": {
+            "type": "number"
+          },
+          "annual_import_volume_usd": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "original_duty_rate_pct",
+          "candidate_duty_rate_pct",
+          "annual_import_volume_usd"
+        ]
+      }
+    }
+  ]
+}
